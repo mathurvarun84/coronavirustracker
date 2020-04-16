@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.6.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.corona'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '12'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	compile group: 'org.apache.commons', name: 'commons-csv', version: '1.5'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
