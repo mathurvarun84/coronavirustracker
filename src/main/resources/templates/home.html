@@ -24,18 +24,33 @@
 
 </div>
 
+    <div class="jumbotron">
+        <h1 class="display-4" th:text="${totalDeathCases}"></h1>
+        <p class="lead">Total deaths reported as of today</p>
+        <hr class="my-4">
+        <p>
+            <span>deaths reported since previous day:</span>
+            <span th:text="${totalNewDeathCases}"></span>
+        </p>
+
+    </div>
+
     <table class="table">
         <tr>
             <th>State</th>
             <th>Country</th>
             <th>Total cases reported</th>
             <th>Changes since last day</th>
+            <th>Total Death cases reported</th>
+            <th>Changes in death since last day</th>
         </tr>
         <tr th:each="locationStat : ${locationStats}">
             <td th:text="${locationStat.state}"></td>
             <td th:text="${locationStat.country}"></td>
             <td th:text="${locationStat.latestTotalCases}">0</td>
             <td th:text="${locationStat.diffFromPrevDay}">0</td>
+            <td th:text="${locationStat.latestDeathCases}">0</td>
+            <td th:text="${locationStat.deathDiffFromPrevDay}">0</td>
         </tr>
     </table>
 </div>

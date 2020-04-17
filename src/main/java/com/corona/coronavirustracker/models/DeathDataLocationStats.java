@@ -1,7 +1,6 @@
 package com.corona.coronavirustracker.models;
 
-public class LocationStats {
-
+public class DeathDataLocationStats {
     private String state;
 
     public String getState() {
@@ -39,23 +38,4 @@ public class LocationStats {
     private String country;
     private int latestTotalCases;
     private int diffFromPrevDay;
-
-    public int getLatestDeathCases() {
-        return latestDeathCases;
-    }
-
-    public void setLatestDeathCases(int latestDeathCases) {
-        this.latestDeathCases = latestDeathCases;
-    }
-
-    public int getDeathDiffFromPrevDay() {
-        return deathDiffFromPrevDay;
-    }
-
-    public void setDeathDiffFromPrevDay(int deathDiffFromPrevDay) {
-        this.deathDiffFromPrevDay = deathDiffFromPrevDay;
-    }
-
-    private int latestDeathCases;
-    private int deathDiffFromPrevDay;
 }
